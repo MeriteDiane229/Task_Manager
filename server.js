@@ -8,6 +8,11 @@ connectDB();
 const app = express();
 app.use(express.json());
 
+// Route de base
+app.get('/', (req, res) => {
+    res.json({ message: "Bienvenue sur l'API Gestion des tâches" });
+  });
+
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/tasks", require("./routes/taskRoutes"));
 
